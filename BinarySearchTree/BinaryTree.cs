@@ -11,6 +11,8 @@ namespace BinarySearchTree
         public BinaryTree<T> leftTree { get; set; }
         public BinaryTree<T> rightTree { get; set; }
         bool result = false;
+        int leftCount = 0;
+        int rightCount = 0;
         public BinaryTree(T NodeData)
         {
             this.NodeData = NodeData;
@@ -47,5 +49,12 @@ namespace BinarySearchTree
                 this.rightTree.Display();
             }
         }
+
+        public void Size()
+        {
+            Console.WriteLine("Size of BST is " + (1 + leftCount + rightCount));
+        }
+
+
     }
 }

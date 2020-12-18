@@ -12,6 +12,9 @@ namespace BinarySearchTree
             binarySearchTree.Insert(70);
             Console.WriteLine("Binary Search Tree -");
             binarySearchTree.Display();
+            Console.WriteLine("Binary Search Tree -");
+            binarySearchTree.Display();
+            binarySearchTree.Size();
         }
     }
 }
