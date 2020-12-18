@@ -6,6 +6,7 @@ namespace BinarySearchTree
 {
     class BinaryTree<T> where T : IComparable
     {
+        //U1 Ability To Create New BST
 
         T NodeData;
         public BinaryTree<T> leftTree { get; set; }
@@ -41,20 +42,40 @@ namespace BinarySearchTree
         {
             if (this.leftTree != null)
             {
+                this.leftCount++;
                 this.leftTree.Display();
             }
             Console.WriteLine(this.NodeData.ToString());
             if (this.rightTree != null)
             {
+                this.rightCount++;
                 this.rightTree.Display();
             }
         }
-
+        //U2-Display the Size of BST
         public void Size()
         {
             Console.WriteLine("Size of BST is " + (1 + leftCount + rightCount));
         }
 
+        //U3-Ability To Search Element 
+        public bool ifExists(T element, BinaryTree<T> node)
+        {
+            if (node == null)
+                return false;
+            if (node.NodeData.Equals(element))
+            {
+                Console.WriteLine("Found element in BST " + node.NodeData);
+                return true;
+            }
+            else
+                Console.WriteLine("Current element is {0} in BST ", node.NodeData);
+            if (element.CompareTo(node.NodeData) < 0)
+                ifExists(element, node.leftTree);
+            if (element.CompareTo(node.NodeData) > 0)
+                ifExists(element, node.rightTree);
+            return result;
 
+        }
     }
 }
